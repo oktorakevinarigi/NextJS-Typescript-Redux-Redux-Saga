@@ -1,0 +1,2 @@
+export const APP_HANDLE_STATE = 'APP_HANDLE_STATE'
+export const APP_FETCH_DATA = 'APP_FETCH_DATA'

@@ -1,5 +1,5 @@
 {
-  "name": "undangan",
+  "name": "nextjs",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "antd": "^4.15.6",
     "next": "10.2.2",
+    "next-redux-wrapper": "^6.0.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "redux-saga": "^1.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.6",
+    "@types/react-redux": "^7.1.16",
+    "typescript": "^4.2.4"
   }
 }

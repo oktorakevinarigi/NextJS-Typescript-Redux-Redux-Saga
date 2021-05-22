@@ -1,8 +1,20 @@
+import { SyntheticEvent } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import { useDispatch, useSelector, RootStateOrAny } from 'react-redux'
 
-export default function Home() {
+import styles from '../styles/Home.module.css'
+import { actApp } from '../redux/actions'
+
+const Home = () => {
+  const dispatch = useDispatch()
+  const token = useSelector((state: RootStateOrAny) => state.app.token)
+
+  const onToken = (e: SyntheticEvent) => {
+    e.preventDefault()
+    dispatch(actApp.handleState('token', 'token'))
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +25,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://nextjs.org">Next.js! {token}</a>
         </h1>
 
         <p className={styles.description}>
@@ -45,6 +57,7 @@ export default function Home() {
             className={styles.card}
           >
             <h2>Deploy &rarr;</h2>
+            <button onClick={onToken}>siap</button>
             <p>
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
@@ -67,3 +80,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home
